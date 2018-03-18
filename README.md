@@ -449,6 +449,23 @@ git checkout -b uigradients
 https://uigradients.com/#Shift
 http://css3generator.com/
 ```
+```
+git checkout -b heroku
+---
+group :development, :test do
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'sqlite3', '1.3.11'
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+end
+
+group :development do
+  gem 'pg', '0.18.4'
+end
+```
 
 # 最终表现效果：
 ![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fph2wp6716j31kw0hr78u.jpg)
