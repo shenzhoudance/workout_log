@@ -388,3 +388,59 @@ body {
 }
 ```
 ![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fph02y293uj31kw0n4gxe.jpg)
+
+```
+git checkout -b exercise
+rails g model exercise name:string sets:integer reps:integer workout:references
+rake db:migrate
+```
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fph09ywsuyj31bk0i20xd.jpg)
+```
+app/models/workout.rb
+---
+class Workout < ApplicationRecord
+  has_many :exercises
+end
+---
+rake routes
+```
+![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fph0euidpij31540eyjvd.jpg)
+```
+rails g controller exercises
+---
+class ExercisesController < ApplicationController
+ def create
+   @workout = Workout.find(params[:workout_id])
+   @exercises = @workout.exercises.create(params[:exercise].permit(:name, :sets, :reps))
+
+   redirect_to workout_path(@workout)
+ end
+end
+---
+app/views/exercises/_form.html.haml
+---
+
+= simple_form_for([@workout, @workout.exercises.build]) do |f|
+	= f.input :name, input_html: { class: "form-control" }
+	= f.input :sets, input_html: { class: "form-control" }
+	= f.input :reps, input_html: { class: "form-control" }
+	%br/
+	= f.button :submit
+
+---
+app/views/exercises/_exercises.html.haml
+---
+%p= exercise.name
+%p= exercise.sets
+%p= exercise.reps
+---
+```
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fph0yff4ryj31kw0s6tpk.jpg)
+
+```
+https://hackhands.com/format-datetime-ruby/
+```
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fph2buermzj31kw0m2ncv.jpg)
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fph2box5ssj31kw0jmna5.jpg)
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fph2bfeyzkj31kw0qvdwz.jpg)
+![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fph2ah4vfhj31kw0q57km.jpg)
