@@ -1,4 +1,7 @@
 class WorkoutsController < ApplicationController
+
+  before_action :find_workout, only: [:show, :edit, :update, :destroy]
+
   def index
   end
 
@@ -30,9 +33,10 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).premit(:date,:workout,:mood,:length)
+    params.require(:workout).permit(:date,:workout,:mood,:length)
   end
 
   def find_workout
+    @workout = Workout.find(params[:id])
   end
 end
