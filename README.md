@@ -466,6 +466,6 @@ group :development do
   gem 'pg', '0.18.4'
 end
 ```
-
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fph3ha0m33j31kw0wfn8j.jpg)
 # 最终表现效果：
 ![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fph2wp6716j31kw0hr78u.jpg)
