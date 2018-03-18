@@ -185,3 +185,70 @@ rails s
 http://localhost:3000/workouts/new
 ```
 ![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgri0i7fij31cg0ssdib.jpg)
+
+```
+app/views/workouts/show.html.haml
+---
+#workout
+	%p= @workout.date
+	%p= @workout.workout
+	%p= @workout.mood
+	%p= @workout.length
+
+
+
+= link_to "Back", root_path
+= link_to "Edit", edit_workout_path(@workout)
+= link_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }
+---
+rails s
+http://localhost:3000/workouts/1
+```
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpgrsh663zj31kw0jowhz.jpg)
+```
+app/controllers/workouts_controller.rb
+---
+class WorkoutsController < ApplicationController
+
+  before_action :find_workout, only: [:show, :edit, :update, :destroy]
+
+  def index
+  end
+
+  def show
+  end
+
+  def new
+    @workout = Workout.new
+  end
+
+  def create
+    @workout = Workout.new(workout_params)
+    if @workout.save
+      redirect_to @workout
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+
+  def workout_params
+    params.require(:workout).permit(:date,:workout,:mood,:length)
+  end
+
+  def find_workout
+    @workout = Workout.find(params[:id])
+  end
+end
+---
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpgs1bwgexj30iw0cejs1.jpg)
