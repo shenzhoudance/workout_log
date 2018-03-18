@@ -1,5 +1,5 @@
 %h1 欢迎来到才华横溢的领域
-
+#index_workouts
 - @workouts.each do |workout|
 	%h2= link_to workout.date.strftime("%A %B %d"),workout
 	%h3= workout.workout
