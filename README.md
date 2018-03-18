@@ -435,7 +435,12 @@ app/views/exercises/_exercises.html.haml
 %p= exercise.reps
 ---
 ```
-![image](hhttps://ws3.sinaimg.cn/large/006tKfTcgy1fph0yff4ryj31kw0s6tpk.jpg)
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fph0yff4ryj31kw0s6tpk.jpg)
 
 ```
 https://hackhands.com/format-datetime-ruby/
+```
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fph2buermzj31kw0m2ncv.jpg)
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fph2box5ssj31kw0jmna5.jpg)
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fph2bfeyzkj31kw0qvdwz.jpg)
+![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fph2ah4vfhj31kw0q57km.jpg)
