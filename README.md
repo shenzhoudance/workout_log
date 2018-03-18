@@ -302,6 +302,10 @@ def destroy
   redirect_to root_path
 end
 ```
----
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgzs6r2k6j30wi0emgn2.jpg)
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgzryb2dnj30m80baaao.jpg)
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgzrm2zx7j31860s2q5a.jpg)
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgzr6qk9rj30xg0s80uz.jpg)---
+
 https://getbootstrap.com/docs/3.3/css/
 https://getbootstrap.com/docs/3.3/components/
