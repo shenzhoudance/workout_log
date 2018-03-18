@@ -253,3 +253,36 @@ end
 ---
 ```
 ![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpgs1bwgexj30iw0cejs1.jpg)
+
+```
+---
+app/views/workouts/index.html.haml
+---
+%h1 欢迎来到才华横溢的领域
+
+- @workouts.each do |workout|
+	%p= workout.date
+	%p= workout.workout
+---
+app/controllers/workouts_controller.rb
+---
+def index
+  @workouts = Workout.all.order("create_at DESC")
+end
+---
+```
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgsnp8661j30qc0d6myg.jpg)
+
+```
+---
+app/views/workouts/index.html.haml
+---
+%h1 欢迎来到才华横溢的领域
+
+- @workouts.each do |workout|
+	%h2= link_to workout.date,workouts
+	%h3= workout.workout
+---
+rake routes
+```
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpgsqato1vj30sc0ikjte.jpg)
