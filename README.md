@@ -286,3 +286,22 @@ app/views/workouts/index.html.haml
 rake routes
 ```
 ![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fpgsqato1vj30sc0ikjte.jpg)
+
+```
+app/controllers/workouts_controller.rb
+---
+def update
+  if @workout.update(workout_params)
+    redirect_to @workout
+  else
+    render 'edit'
+end
+
+def destroy
+  @workout.destroy
+  redirect_to root_path
+end
+```
+---
+https://getbootstrap.com/docs/3.3/css/
+https://getbootstrap.com/docs/3.3/components/
