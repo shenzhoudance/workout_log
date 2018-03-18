@@ -43,13 +43,15 @@ class WorkoutsController < ApplicationController
   end
 end
 ---
+```
 ![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fpgq4y0ev0j31kw0l1gt7.jpg)
 ```
 app/views/workouts/index.html.erb
 ---
 <h1>欢迎来到才华横溢的世界</h1>
+```
 ![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgq9fom2oj313a09ywfc.jpg)
 
-```
+
 git add .
 git commit -m "add workout controller index & routes"
