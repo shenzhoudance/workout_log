@@ -306,6 +306,85 @@ end
 ![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgzryb2dnj30m80baaao.jpg)
 ![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgzrm2zx7j31860s2q5a.jpg)
 ![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fpgzr6qk9rj30xg0s80uz.jpg)---
-
+```
 https://getbootstrap.com/docs/3.3/css/
 https://getbootstrap.com/docs/3.3/components/
+---
+app/views/layouts/application.html.haml
+---
+!!!
+%html
+%head
+	%title Workout Log Application
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= csrf_meta_tags
+%body
+	%nav.navbar.navbar-default
+		.container
+			.navbar-header
+				= link_to "Workout Log", root_path, class: "navbar-brand"
+			.nav.navbar-nav.navbar-right
+				= link_to "New Workout", new_workout_path, class: "nav navbar-link"
+
+	.container
+		= yield
+
+```
+```
+app/assets/stylesheets/application.scss
+---
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+	height: 100%;
+}
+
+body {
+	background: -webkit-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #616161 10%, #9bc5c3 90%); /* W3C */
+}
+
+.navbar-default {
+	background: rgba(250, 250, 250, 0.5);
+	-webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+	border: none;
+	border-radius: 0;
+	.navbar-header {
+		.navbar-brand {
+			color: white;
+			font-size: 20px;
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: -1px;
+		}
+	}
+	.navbar-link {
+		line-height: 3.5;
+		color: rgb(48, 181, 199);
+	}
+}
+
+#index_workouts {
+	h2 {
+		margin-bottom: 0;
+		font-weight: 100;
+		a {
+			color: white;
+		}
+	}
+	h3 {
+		margin: 0;
+		font-size: 18px;
+		span {
+			color: rgb(48, 181, 199);
+		}
+	}
+}
+```
+![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fph02y293uj31kw0n4gxe.jpg)
